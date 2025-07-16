@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bywwarkxuvivr"]
+[gd_scene load_steps=3 format=3 uid="uid://bywwarkxuvivr"]
 
 [ext_resource type="Script" uid="uid://l7i4pxfgwuv4" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="PackedScene" uid="uid://b0c3hcwjidju2" path="res://bg.tscn" id="2_ouk20"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_lti8b")
@@ -22,6 +23,8 @@ offset_bottom = 458.0
 theme_override_font_sizes/font_size = 50
 button_mask = 0
 text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_ouk20")]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

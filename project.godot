@@ -15,6 +15,13 @@ run/main_scene="uid://bywwarkxuvivr"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://player/": "green"
+}
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"

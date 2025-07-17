@@ -1,14 +1,8 @@
-[gd_scene format=3 uid="uid://dnfutn7smfthy"]
+[gd_scene load_steps=2 format=3 uid="uid://dnfutn7smfthy"]
+
+[ext_resource type="PackedScene" uid="uid://bu211xqjui8pe" path="res://player/Player.tscn" id="1_u52ul"]
 
 [node name="Level" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 361.0
-offset_top = 206.0
-offset_right = 810.0
-offset_bottom = 411.0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 50
-text = "Level 1"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Player" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(155, 86)

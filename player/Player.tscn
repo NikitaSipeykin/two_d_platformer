@@ -1,9 +1,25 @@
-[gd_scene load_steps=27 format=3 uid="uid://bu211xqjui8pe"]
+[gd_scene load_steps=31 format=3 uid="uid://bu211xqjui8pe"]
 
 [ext_resource type="Script" uid="uid://b5ae8id82y64v" path="res://player/player.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://cmmv37i7l6mms" path="res://oak_woods_v1.0/character/char_blue.png" id="1_ulp21"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3c3w1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c3w1"]
+atlas = ExtResource("1_ulp21")
+region = Rect2(56, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tqfn"]
+atlas = ExtResource("1_ulp21")
+region = Rect2(112, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stbqk"]
+atlas = ExtResource("1_ulp21")
+region = Rect2(168, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y617q"]
+atlas = ExtResource("1_ulp21")
+region = Rect2(224, 224, 56, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnvi2"]
 atlas = ExtResource("1_ulp21")
@@ -97,6 +113,23 @@ region = Rect2(392, 112, 56, 56)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3c3w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tqfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stbqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y617q")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wnvi2")
 }, {
 "duration": 1.0,
@@ -186,6 +219,15 @@ shape = SubResource("CapsuleShape2D_3c3w1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_8tqfn")
-animation = &"jumping"
+animation = &"falling"
 autoplay = "idle"
-frame_progress = 0.0792578
+frame_progress = 0.31989
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.4, 2.4)
+process_callback = 0
+limit_left = 0
+limit_right = 1250
+limit_bottom = 640
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
